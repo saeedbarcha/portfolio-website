@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Saeed Hussain — Software Engineer</title>
+  <desc id="desc">Open Graph image for Saeed Hussain's portfolio</desc>
+  <rect width="1200" height="630" fill="#09090b"/>
+  <rect x="64" y="64" width="1072" height="502" rx="28" fill="none" stroke="#c9a06c" stroke-opacity="0.35"/>
+  <text x="108" y="220" font-family="Georgia, serif" font-size="28" fill="#c9a06c" letter-spacing="6">SOFTWARE ENGINEER</text>
+  <text x="108" y="330" font-family="Georgia, serif" font-size="72" fill="#f4f1ea">Saeed Hussain</text>
+  <text x="108" y="400" font-family="Arial, sans-serif" font-size="28" fill="#c6c1b8">Full-Stack Developer for international clients</text>
+  <text x="108" y="500" font-family="Arial, sans-serif" font-size="20" fill="#8d8982">Upwork Top Rated · Fiverr 5.0 · Remote collaboration</text>
+</svg>
