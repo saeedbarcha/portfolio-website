@@ -66,12 +66,12 @@ export function WorkPage() {
         <header className="mt-8 grid gap-10 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
           <div className="max-w-3xl">
             <p className="eyebrow">All published work</p>
-            <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+            <h1 className="mt-4 font-display text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-pretty sm:text-5xl">
               Projects for international clients
             </h1>
-            <p className="mt-4 text-lg text-text-secondary">
-              Full-stack web applications, dashboards, APIs, and product UI delivered remotely
-              on Upwork and Fiverr. Titles match the public work history. Client names stay unpublished.
+            <p className="mt-4 text-base leading-relaxed text-text-secondary sm:text-lg">
+              Named products with public URLs include HeyCarla, Eldrin AI, Plex Medical, and Equipmates.
+              Additional case studies from Upwork and Fiverr keep client names unpublished.
               For quotes, see{" "}
               <Link to="/reviews" className="text-accent hover:text-accent-hover">
                 all public reviews
@@ -176,7 +176,7 @@ export function WorkPage() {
             </p>
             {filtered.length ? (
               <>
-                <div className="mt-6 grid gap-6 lg:grid-cols-2">
+                <div className="mt-6 grid gap-5 sm:gap-6 lg:grid-cols-2">
                   {shown.map((project, index) => (
                     <ProjectCard key={project.id} project={project} priority={index === 0} />
                   ))}

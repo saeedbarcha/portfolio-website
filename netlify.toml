@@ -36,3 +36,14 @@
   for = "/sitemap.xml"
   [headers.values]
     Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/Saeed_Hussain_Resume.pdf"
+  [headers.values]
+    Content-Disposition = "attachment; filename=\"Saeed_Hussain_Resume.pdf\""
+
+[[headers]]
+  for = "/Saeed_Hussain_Resume.docx"
+  [headers.values]
+    Content-Type = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    Content-Disposition = "attachment; filename=\"Saeed_Hussain_Resume.docx\""

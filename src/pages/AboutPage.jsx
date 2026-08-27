@@ -23,7 +23,7 @@ export function AboutPage() {
     <main id="main" className="pb-8">
       <Seo
         title={`About | ${personalInfo.name}`}
-        description="Saeed Hussain is a full-stack and AI engineer based in Gilgit. Background, Upwork and Fiverr achievements, Udemy certification, and how engagements typically run."
+        description="Saeed Hussain is a Full Stack Engineer and AI Engineer based in Gilgit-Baltistan. HeyCarla, Artilect Solutions, Upwork and Fiverr work, Udemy certification, and how engagements typically run."
         path="/about"
       />
       <JsonLd data={getPersonJsonLd()} />
@@ -48,9 +48,9 @@ export function AboutPage() {
       <Faq />
       <SocialPresence />
       <Container className="pb-20">
-        <div className="rounded-[1.5rem] border border-border bg-surface p-8 sm:p-10">
-          <h2 className="font-display text-2xl font-semibold">Have a project in mind?</h2>
-          <p className="mt-3 max-w-2xl text-text-secondary">
+        <div className="rounded-[1.5rem] border border-border bg-surface p-5 sm:p-10">
+          <h2 className="font-display text-xl font-semibold text-pretty sm:text-2xl">Have a project in mind?</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary sm:text-base">
             Share a short brief. I reply with questions, scope, and a practical next step — directly,
             or on Upwork or Fiverr if you already work there.
           </p>

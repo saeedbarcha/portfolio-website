@@ -47,7 +47,7 @@ export function SkillsIndexPage() {
         <Breadcrumbs items={breadcrumbs} />
         <header className="mt-8 max-w-3xl">
           <p className="eyebrow">Hire by stack</p>
-          <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="mt-4 font-display text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-pretty sm:text-5xl">
             Skills and stacks you can hire me for
           </h1>
           <p className="mt-4 text-lg text-text-secondary">

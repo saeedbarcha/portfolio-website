@@ -56,7 +56,7 @@ export function SkillPage() {
         <Breadcrumbs items={breadcrumbs} />
         <header className="mt-8 max-w-3xl">
           <p className="eyebrow">{topic.name}</p>
-          <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="mt-4 font-display text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-pretty sm:text-5xl">
             {topic.headline}
           </h1>
           <p className="mt-4 text-lg text-text-secondary">{topic.summary}</p>

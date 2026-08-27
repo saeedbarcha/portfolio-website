@@ -15,7 +15,7 @@ export function Experience() {
           <SectionHeading
             eyebrow="03 — Experience"
               title="Professional experience"
-              description="Independent engineering for international clients, plus earlier MERN work at Dot Austere. Marketplace proof is on Upwork."
+              description="HeyCarla (Germany healthcare SaaS), Artilect Solutions, and earlier MERN work at Dot Austere. Marketplace proof is on Upwork and Fiverr."
           />
         </Reveal>
         <Reveal delay={0.06}>

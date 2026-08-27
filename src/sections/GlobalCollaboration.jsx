@@ -58,7 +58,7 @@ export function GlobalCollaboration({ className }) {
               >
                 {country.flag}
               </span>
-              <span className="whitespace-nowrap">{country.name}</span>
+              <span className="min-w-0">{country.name}</span>
             </motion.li>
           ))}
         </ul>

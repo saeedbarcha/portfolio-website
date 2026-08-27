@@ -32,7 +32,7 @@ export function CTA({
     <section className={cx("py-20 sm:py-24", className)}>
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2rem] border border-border bg-surface px-6 py-12 sm:px-10 sm:py-16">
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-border bg-surface px-5 py-10 sm:rounded-[2rem] sm:px-10 sm:py-16">
             <div
               className="pointer-events-none absolute inset-0"
               aria-hidden="true"
@@ -42,10 +42,10 @@ export function CTA({
               }}
             />
             <div className="relative max-w-2xl">
-              <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+              <h2 className="font-display text-2xl font-semibold tracking-tight text-pretty sm:text-4xl">
                 {heading}
               </h2>
-              <p className="mt-4 text-text-secondary">{body}</p>
+              <p className="mt-4 text-sm leading-relaxed text-text-secondary sm:text-base">{body}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 {primary ? (
                   <ActionButton action={primary}>

@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Download, X } from "lucide-react";
-import { Button } from "@/components/common/Button.jsx";
+import { X } from "lucide-react";
+import { createPortal } from "react-dom";
+import { ResumeDownload } from "@/components/common/ResumeDownload.jsx";
 import { personalInfo } from "@/data/personal.js";
 import { useFocusTrap } from "@/hooks/useFocusTrap.js";
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock.js";
@@ -8,7 +9,7 @@ import { useReducedMotion } from "@/hooks/useReducedMotion.js";
 import { useCallback, useRef } from "react";
 import { cx } from "@/utils/helpers.js";
 
-export function MobileMenu({ open, onClose, items, activeId, onNavigate, resumeHref }) {
+export function MobileMenu({ open, onClose, items, activeId, onNavigate }) {
   const panelRef = useRef(null);
   const reduced = useReducedMotion();
   const handleClose = useCallback(() => onClose?.(), [onClose]);
@@ -16,84 +17,71 @@ export function MobileMenu({ open, onClose, items, activeId, onNavigate, resumeH
   useBodyScrollLock(open);
   useFocusTrap(open, panelRef, handleClose);
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <AnimatePresence>
       {open ? (
         <motion.div
-          className="fixed inset-0 z-40 lg:hidden"
+          ref={panelRef}
+          id="mobile-navigation"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Site navigation"
+          className="fixed inset-0 z-50 flex h-dvh w-full flex-col bg-bg px-6 pt-[max(1.25rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))] lg:hidden"
           initial={reduced ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
         >
-          <button
-            type="button"
-            className="absolute inset-0 bg-black/70"
-            aria-label="Close menu"
-            onClick={handleClose}
-          />
-          <motion.div
-            ref={panelRef}
-            id="mobile-navigation"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Site navigation"
-            className="absolute inset-y-0 right-0 flex w-[min(100%,24rem)] flex-col border-l border-border bg-bg px-5 py-6 shadow-soft"
-            initial={reduced ? false : { x: 24 }}
-            animate={{ x: 0 }}
-            exit={reduced ? { x: 0 } : { x: 24 }}
-            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="mb-8 flex items-center justify-between">
-              <span className="flex items-center gap-3">
-                <img
-                  src={personalInfo.photo}
-                  alt=""
-                  width={40}
-                  height={40}
-                  className="size-10 rounded-full object-cover object-top"
-                />
-                <span className="font-display text-sm font-semibold">{personalInfo.name}</span>
-              </span>
-              <button
-                type="button"
-                onClick={handleClose}
-                className="inline-flex size-11 items-center justify-center rounded-full border border-border"
-                aria-label="Close menu"
-              >
-                <X size={18} aria-hidden="true" />
-              </button>
-            </div>
-            <nav aria-label="Mobile">
-              <ul className="space-y-1">
-                {items.map((item) => {
-                  const current = activeId === item.id;
-                  return (
-                    <li key={item.id}>
-                      <a
-                        href={item.to}
-                        aria-current={current ? "true" : undefined}
-                        onClick={(event) => onNavigate(event, item)}
-                        className={cx(
-                          "flex min-h-12 items-center rounded-xl px-3 text-lg",
-                          current ? "text-accent" : "text-text-secondary hover:text-text",
-                        )}
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-            <div className="mt-auto pt-8">
-              <Button as="a" href={resumeHref} className="w-full" download>
-                <Download size={16} aria-hidden="true" />
-                Download Resume
-              </Button>
-            </div>
-          </motion.div>
+          <div className="mb-8 flex items-center justify-between">
+            <span className="flex min-w-0 items-center gap-3">
+              <img
+                src={personalInfo.photo}
+                alt=""
+                width={40}
+                height={40}
+                className="size-10 rounded-full object-cover object-top"
+              />
+              <span className="font-display truncate text-sm font-semibold">{personalInfo.name}</span>
+            </span>
+            <button
+              type="button"
+              onClick={handleClose}
+              className="inline-flex size-11 shrink-0 items-center justify-center rounded-full border border-border bg-bg"
+              aria-label="Close menu"
+            >
+              <X size={18} aria-hidden="true" />
+            </button>
+          </div>
+          <nav aria-label="Mobile" className="min-h-0 flex-1 overflow-y-auto">
+            <ul className="space-y-1">
+              {items.map((item) => {
+                const current = activeId === item.id;
+                return (
+                  <li key={item.id}>
+                    <a
+                      href={item.to}
+                      aria-current={current ? "true" : undefined}
+                      onClick={(event) => onNavigate(event, item)}
+                      className={cx(
+                        "flex min-h-12 items-center rounded-xl px-3 text-lg",
+                        current ? "text-accent" : "text-text-secondary hover:text-text",
+                      )}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+          <div className="shrink-0 border-t border-border pt-6">
+            <ResumeDownload variant="stack" />
+          </div>
         </motion.div>
       ) : null}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body,
   );
 }

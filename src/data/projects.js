@@ -1,9 +1,9 @@
 /**
  * Published case studies.
  *
- * Titles and dates match public Upwork work history.
- * Client names and live URLs stay unpublished (confidential).
- * Additional completed jobs exist on Upwork beyond this list.
+ * Titles and dates match public work history and the published resume.
+ * Named products with public URLs: HeyCarla, Eldrin AI, Plex Medical, Equipmates.
+ * Other client names stay unpublished.
  */
 
 function createProject(entry = {}) {
@@ -72,6 +72,218 @@ const upworkMarket = { projectUrl: null, gigUrl: null };
 
 export const projects = [
   createProject({
+    id: "heycarla",
+    slug: "heycarla-healthcare-saas",
+    title: "HeyCarla — AI-powered workforce & healthcare SaaS",
+    source: "direct",
+    configured: true,
+    featured: true,
+    featuredOrder: 1,
+    confidential: false,
+    hideClientName: false,
+    hideProjectUrl: false,
+    hideMarketplaceUrl: true,
+    industry: "Healthcare",
+    category: "SaaS",
+    role: "Full Stack Engineer & AI Engineer",
+    year: "2024–2026",
+    completed: "August 2026",
+    liveUrl: "https://dev.usecarla.de/",
+    summary:
+      "Production SaaS for healthcare agencies in Germany. I built full-stack features with React, Node.js, Express, MongoDB, REST APIs, and Docker, and wired LLM, LangChain, and RAG into the product — not a demo chatbot.",
+    challenge:
+      "Healthcare agencies needed one platform for workforce operations and patient-related workflows, with AI that could search, summarize, and generate documents inside the same product operators already used.",
+    requirements: [
+      "Full-stack features on React, Node.js, Express, MongoDB, and Docker",
+      "Modules for employees, clients, patients, bookings, leave, timesheets, invoices, approvals, notifications, and reports",
+      "Role-based access and production-grade API security",
+      "LLM, LangChain, and RAG inside real healthcare workflows",
+    ],
+    solution:
+      "I owned features end-to-end — data modeling, APIs, UI, validation, and deployment support — and integrated smart search, conflict detection, summaries, availability suggestions, automated reports, and AI-assisted email and document generation.",
+    responsibilities: [
+      "Full-stack product features across the healthcare SaaS",
+      "API design, data modeling, and Docker-based delivery",
+      "LangChain and RAG workflows inside the product",
+      "Authentication, RBAC, error handling, and production stability",
+    ],
+    features: [
+      "Employees, clients, patients, bookings, vacations, sick leave, and timesheets",
+      "Invoices, approvals, notifications, reports, and role-based access",
+      "Smart search, conflict detection, summaries, and availability suggestions",
+      "Automated reports and AI-assisted email and document generation",
+    ],
+    challenges: [
+      "Keeping AI features inside operational healthcare workflows instead of a separate chat window",
+      "Production stability across modules used by agencies and enterprise users",
+    ],
+    decisions: [
+      "Stay on React, Node.js, Express, and MongoDB so AI sat in the same stack as the rest of the product",
+      "Use LangChain and RAG for search, summaries, and generation rather than one-off prompts",
+    ],
+    architecture:
+      "React client, Node.js/Express API, MongoDB, Docker. LLM, LangChain, and RAG inside healthcare workflows. Live product: https://dev.usecarla.de/",
+    results: [
+      "Shipped as a production SaaS used by healthcare agencies and enterprise users in Germany.",
+      "AI-assisted search, reporting, and document generation sit in the same product as bookings, timesheets, and invoices.",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Docker",
+      "LangChain",
+      "RAG",
+      "LLMs",
+      "REST APIs",
+    ],
+    images: cover("crm", "HeyCarla healthcare SaaS interface overview"),
+    client: {
+      name: "HeyCarla",
+      company: "HeyCarla",
+      country: "Germany",
+      showName: true,
+    },
+    seo: {
+      title: "HeyCarla healthcare SaaS | Saeed Hussain",
+      description:
+        "HeyCarla — AI-powered workforce and healthcare SaaS in Germany. Full-stack React, Node.js, MongoDB, Docker, LangChain, and RAG by Saeed Hussain.",
+    },
+  }),
+
+  createProject({
+    id: "plex-medical",
+    slug: "plex-medical",
+    title: "Plex Medical — ECG dashboard",
+    source: "direct",
+    configured: true,
+    featured: false,
+    featuredOrder: 4,
+    confidential: false,
+    hideClientName: false,
+    hideProjectUrl: false,
+    hideMarketplaceUrl: true,
+    industry: "Healthcare",
+    category: "Dashboard",
+    role: "Full-Stack Developer & AI Integration",
+    year: "2022–2024",
+    completed: "August 2024",
+    liveUrl: "https://plex-medical.com/",
+    summary:
+      "MERN medical dashboard for visualizing ECG signals and patient-related data. CSV upload, manual data entry, AI-based analysis, and charts on React, Node.js, Express, and MongoDB.",
+    challenge:
+      "The product needed a dashboard that could ingest ECG and patient data, send it through AI analysis, and show the results as charts — not a static reporting page.",
+    requirements: [
+      "Interactive graphical views of ECG and patient data",
+      "CSV upload and manual data-entry workflows",
+      "AI analysis results shown in the dashboard",
+      "Responsive medical dashboard on the MERN stack",
+    ],
+    solution:
+      "I built the MERN application for input, analysis workflows, and reporting, and connected the UI to AI-based analysis so model responses appeared in charts and dashboard views.",
+    responsibilities: [
+      "MERN dashboard implementation",
+      "CSV and manual data-entry flows",
+      "AI analysis integration and charting",
+    ],
+    features: [
+      "ECG and patient data visualization",
+      "CSV upload and manual entry",
+      "AI analysis shown through charts",
+      "Responsive medical dashboard",
+    ],
+    challenges: [
+      "Connecting data entry, AI analysis, and visualization without splitting them into disconnected tools",
+    ],
+    decisions: [
+      "Keep ingestion, analysis, and charts on one MERN application",
+    ],
+    architecture:
+      "React, Node.js, Express, and MongoDB. Live product: https://plex-medical.com/",
+    results: [
+      "Shipped a production medical dashboard with ECG visualization and AI-assisted analysis (September 2022 – August 2024).",
+    ],
+    technologies: ["React", "Node.js", "Express.js", "MongoDB", "JavaScript"],
+    images: cover("analytics", "Plex Medical ECG dashboard interface overview"),
+    client: {
+      name: "Plex Medical",
+      company: "Plex Medical",
+      country: null,
+      showName: true,
+    },
+    seo: {
+      title: "Plex Medical ECG dashboard | Saeed Hussain",
+      description:
+        "Plex Medical — MERN medical dashboard for ECG visualization, data entry, and AI analysis, built by Saeed Hussain.",
+    },
+  }),
+
+  createProject({
+    id: "equipmates",
+    slug: "equipmates",
+    title: "Equipmates — maintenance and work orders",
+    source: "direct",
+    configured: true,
+    featured: true,
+    featuredOrder: 3,
+    confidential: false,
+    hideClientName: false,
+    hideProjectUrl: false,
+    hideMarketplaceUrl: true,
+    industry: "Operations",
+    category: "SaaS",
+    role: "Full-Stack Developer",
+    year: "2024",
+    completed: "August 2024",
+    liveUrl: "https://getequipmate.com/",
+    summary:
+      "Next.js and NestJS platform for scheduling equipment maintenance and managing work orders — planning, creation, and tracking in one product.",
+    challenge:
+      "Maintenance planning and work orders were spread across manual coordination. The product needed a single workflow for scheduling, creating, and tracking work.",
+    requirements: [
+      "Next.js frontend and NestJS API",
+      "Equipment maintenance scheduling",
+      "Work-order creation and tracking",
+    ],
+    solution:
+      "I built Equipmates on Next.js and NestJS so maintenance planning and work-order tracking lived in one application instead of email and spreadsheets.",
+    responsibilities: [
+      "Next.js and NestJS implementation",
+      "Maintenance and work-order workflows",
+    ],
+    features: [
+      "Maintenance planning and scheduling",
+      "Work-order creation and tracking",
+      "Operational visibility across equipment work",
+    ],
+    challenges: [
+      "Reducing manual coordination without over-building a generic CMMS",
+    ],
+    decisions: [
+      "Use Next.js and NestJS so UI and API stayed in one typed product boundary",
+    ],
+    architecture:
+      "Next.js frontend with a NestJS API. Live product: https://getequipmate.com/",
+    results: [
+      "Shipped a production maintenance and work-order platform (February 2024 – August 2024).",
+    ],
+    technologies: ["Next.js", "NestJS", "Node.js"],
+    images: cover("admin", "Equipmates maintenance and work-order interface overview"),
+    client: {
+      name: "Equipmates",
+      company: "Equipmates",
+      country: null,
+      showName: true,
+    },
+    seo: {
+      title: "Equipmates | Saeed Hussain",
+      description:
+        "Equipmates — Next.js and NestJS equipment maintenance and work-order platform built by Saeed Hussain.",
+    },
+  }),
+
+  createProject({
     id: "mern-full-stack",
     slug: "mern-full-stack-application",
     title: "Full-stack MERN application",
@@ -137,8 +349,8 @@ export const projects = [
     title: "SDK on NPM and Vercel dashboard",
     source: "upwork",
     configured: true,
-    featured: true,
-    featuredOrder: 3,
+    featured: false,
+    featuredOrder: 99,
     confidential: true,
     hideClientName: true,
     hideProjectUrl: true,
@@ -201,8 +413,8 @@ export const projects = [
     title: "Healthcare ERP/CRM backend",
     source: "upwork",
     configured: true,
-    featured: true,
-    featuredOrder: 2,
+    featured: false,
+    featuredOrder: 99,
     confidential: true,
     hideClientName: true,
     hideProjectUrl: true,
@@ -670,16 +882,17 @@ export const projects = [
     source: "fiverr",
     configured: true,
     featured: true,
-    featuredOrder: 1,
-    confidential: true,
+    featuredOrder: 2,
+    confidential: false,
     hideClientName: true,
-    hideProjectUrl: true,
+    hideProjectUrl: false,
     hideMarketplaceUrl: false,
     industry: "Artificial intelligence",
     category: "Agentic AI",
-    role: "AI Engineer and Full-Stack Developer",
-    year: "2025",
-    completed: "2025",
+    role: "AI Engineer & Full-Stack Developer",
+    year: "2025–2026",
+    completed: "May 2026",
+    liveUrl: "https://www.eldrin.ai/",
     testimonialId: null,
     summary:
       "Eldrin AI is a LinkedIn content product: create, optimize, schedule, and manage posts in one full-stack app, with LangChain and agentic LLM features inside the product — not a chatbot demo.",
@@ -709,10 +922,10 @@ export const projects = [
       "Use LangChain and agentic patterns inside the application, not as a sidecar notebook",
     ],
     architecture:
-      "Full-stack application with LLM and LangChain-based features for LinkedIn content workflows. Client name withheld; product name is public on Fiverr.",
+      "Full-stack application with LLM, Agentic AI, LangChain, and prompt-engineering features for LinkedIn content workflows. Live product: https://www.eldrin.ai/",
     results: [
-      "Published on the Fiverr portfolio as Eldrin AI, an AI-powered LinkedIn post scheduling platform (from March 2025).",
-      "This is the public AI product on my Fiverr profile — the named proof behind the Agentic AI work.",
+      "Shipped Eldrin AI as an AI-powered LinkedIn content platform (July 2025 – May 2026).",
+      "Public product at eldrin.ai — creation, optimization, scheduling, and management in one application.",
     ],
     technologies: ["LangChain", "LLMs", "JavaScript", "React", "Node.js"],
     images: cover("content", "Eldrin AI LinkedIn content platform interface"),

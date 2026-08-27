@@ -7,7 +7,7 @@ export const engagement = {
   available: true,
   label: "Available for new projects",
   note: "Remote-first. International clients welcome. Open to contract-to-hire.",
-  timezone: "PKT (UTC+5) · Gilgit",
+  timezone: "PKT (UTC+5) · Gilgit-Baltistan",
   workingHours: "More than 30 hrs/week",
   languages: [
     { name: "English", level: "Fluent", confirmed: true },

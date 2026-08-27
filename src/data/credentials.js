@@ -51,7 +51,7 @@ export const achievements = [
     source: "Career",
     metric: "7+",
     title: "Years of full-stack development",
-    body: "Including two years as a MERN Stack Developer at Dot Austere, then independent work with international clients.",
+    body: "Including HeyCarla, Artilect Solutions since 2019, and two years as a MERN Stack Developer at Dot Austere.",
     href: null,
   },
 ];

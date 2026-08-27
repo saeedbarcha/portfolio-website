@@ -19,9 +19,9 @@ export const services = [
   },
   {
     id: "ai",
-    title: "Agentic AI, LangGraph & RAG",
+    title: "Agentic AI, LangChain & RAG",
     summary:
-      "Production-ready agents, LangGraph workflows, RAG chatbots, and LLM apps connected to your documents and tools.",
+      "Production-ready agents, LangChain and LangGraph workflows, RAG chatbots, and LLM apps connected to your documents and tools.",
     details:
       "For teams that need workflow automation, internal knowledge search, document Q&A, or an AI assistant with human-in-the-loop control — not a one-off prompt demo.",
     outcomes: [

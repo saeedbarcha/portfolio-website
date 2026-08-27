@@ -24,9 +24,9 @@ export function Education() {
             />
           </Reveal>
           <Reveal delay={0.06}>
-            <article className="surface-card p-6 sm:p-8">
+            <article className="surface-card p-5 sm:p-8">
               <p className="text-sm text-accent">{education.graduationYear}</p>
-              <h3 className="mt-2 font-display text-2xl font-semibold">{education.degree}</h3>
+              <h3 className="mt-2 font-display text-xl font-semibold text-pretty sm:text-2xl">{education.degree}</h3>
               <p className="mt-2 text-text-secondary">{education.university}</p>
               {isConfiguredText(education.location) ? (
                 <p className="mt-1 text-sm text-text-muted">{education.location}</p>
@@ -58,6 +58,20 @@ export function Education() {
                     <li key={item}>{item}</li>
                   ))}
                 </ul>
+              ) : null}
+              {personalInfo.education.prior?.length ? (
+                <div className="mt-8 space-y-6 border-t border-border pt-6">
+                  {personalInfo.education.prior.map((item) => (
+                    <article key={`${item.year}-${item.title}`}>
+                      <p className="text-sm text-accent">{item.year}</p>
+                      <h4 className="mt-1 font-display text-lg font-semibold">{item.title}</h4>
+                      <p className="mt-1 text-text-secondary">{item.school}</p>
+                      {item.detail ? (
+                        <p className="mt-1 text-sm text-text-muted">{item.detail}</p>
+                      ) : null}
+                    </article>
+                  ))}
+                </div>
               ) : null}
             </article>
           </Reveal>

@@ -31,7 +31,7 @@ export const seoTopics = [
     summary:
       "Next.js is what I reach for when the brief is a React product that needs routing, server rendering, or a serious e-commerce frontend.",
     body: [
-      "I have shipped Next.js on Upwork as a dedicated e-commerce engagement (5.0, on-time) and as part of Nest.js + Next.js CRM and React Native/Next.js/Nest.js contracts.",
+      "I have shipped Next.js on Upwork as a dedicated e-commerce engagement (5.0, on-time), as part of Nest.js + Next.js CRM and React Native/Next.js/Nest.js contracts, and on Equipmates (getequipmate.com) for maintenance and work orders.",
       "If you need a Next.js developer who can also own the API (Nest.js or Node.js), that is the usual shape of the work.",
     ],
   },
@@ -59,7 +59,7 @@ export const seoTopics = [
     description:
       "Hire a MERN stack developer: MongoDB, Express, React, and Node.js. Saeed Hussain is Top Rated on Upwork and 5.0 on Fiverr for MERN work.",
     summary:
-      "MERN is the stack most of my marketplace jobs are hired for — one engineer for the React app, the Express API, and MongoDB.",
+      "MERN is the stack most of my marketplace jobs are hired for — one engineer for the React app, the Express API, and MongoDB. Named production work includes HeyCarla and Plex Medical.",
     body: [
       "Upwork clients have hired me as “Full Stack Developer - MERN” on a long engagement, and for a healthcare ERP/CRM with a MERN backend focus. Fiverr reviews call me an expert on MERN stack and describe organized functions, routes, and controllers.",
       "If you are searching for a MERN stack developer to hire on Upwork or Fiverr, those profiles are public proof. This site maps the same jobs into case studies.",
@@ -162,11 +162,11 @@ export const seoTopics = [
     headline: "LangChain developer for LLM apps and RAG",
     title: "LangChain Developer | Hire Saeed Hussain",
     description:
-      "LangChain, RAG, and LLM integration by Saeed Hussain — Eldrin AI on Fiverr and Agentic AI services on Upwork.",
+      "LangChain, RAG, and LLM integration by Saeed Hussain — HeyCarla healthcare SaaS, Eldrin AI, and Agentic AI services on Upwork.",
     summary:
       "LangChain is the orchestration layer I use with OpenAI, Claude, and Gemini for assistants, RAG, and agentic products.",
     body: [
-      "Eldrin AI (Fiverr portfolio) used LangChain and prompt engineering for LinkedIn content creation, optimization, and scheduling.",
+      "HeyCarla used LangChain and RAG inside healthcare workflows. Eldrin AI used LangChain and prompt engineering for LinkedIn content creation, optimization, and scheduling.",
       "Upwork services include LangChain agents, RAG pipelines, and wiring those models into MERN or PERN applications.",
     ],
   },
@@ -237,7 +237,7 @@ export const seoTopics = [
     headline: "Full-stack developer for MERN, PERN, and AI products",
     title: "Full-Stack Developer | Hire Saeed Hussain",
     description:
-      "Full-stack developer for hire: React, Node.js, MongoDB, PostgreSQL, LangGraph, RAG. Top Rated Upwork, Level 2 Fiverr (57 projects), Gilgit, Pakistan.",
+      "Full-stack developer for hire: React, Node.js, MongoDB, PostgreSQL, LangChain, RAG, Docker, AWS. HeyCarla, Eldrin AI. Top Rated Upwork, Level 2 Fiverr (57 projects), Gilgit-Baltistan, Pakistan.",
     summary:
       "Full-stack here means one engineer for the interface, the API, and the data — including AI features when the product needs them.",
     body: [

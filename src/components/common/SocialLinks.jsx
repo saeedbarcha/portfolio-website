@@ -70,7 +70,7 @@ export function SocialLink({
         target="_blank"
         rel="noopener noreferrer"
         className={cx(
-          "group flex min-h-14 items-center justify-between gap-4 rounded-2xl border border-border bg-surface px-4 py-3 transition-colors hover:border-accent",
+          "group flex min-h-14 items-center justify-between gap-3 rounded-2xl border border-border bg-surface px-4 py-3.5 transition-colors hover:border-accent sm:gap-4 sm:px-5",
           className,
         )}
       >

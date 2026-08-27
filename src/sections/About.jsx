@@ -13,9 +13,9 @@ function HighlightGrid({ items }) {
       {items.map((item) => (
         <li
           key={item.label}
-          className="rounded-[1.05rem] border border-border bg-surface p-4 sm:p-5"
+          className="rounded-[1.05rem] border border-border bg-surface p-3.5 sm:p-5"
         >
-          <p className="font-display text-xl font-semibold tracking-tight sm:text-2xl">
+          <p className="font-display text-lg font-semibold tracking-tight sm:text-2xl">
             {item.value}
           </p>
           <p className="mt-1 text-sm font-medium">{item.label}</p>

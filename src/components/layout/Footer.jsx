@@ -1,6 +1,7 @@
-import { ArrowUp, Download, Mail } from "lucide-react";
+import { ArrowUp, Mail } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Container } from "@/components/common/Container.jsx";
+import { ResumeDownload } from "@/components/common/ResumeDownload.jsx";
 import { SocialLinks } from "@/components/common/SocialLinks.jsx";
 import { personalInfo } from "@/data/personal.js";
 import { getActiveSocialLinks, getNavItems, getPublicEmail } from "@/utils/content.js";
@@ -26,8 +27,8 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-bg-secondary">
-      <Container className="py-14">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_1fr_auto]">
+      <Container className="py-10 sm:py-14">
+        <div className="grid gap-10 sm:gap-12 md:grid-cols-[1.2fr_1fr_auto]">
           <div>
             <div className="flex items-center gap-3">
               <img
@@ -53,7 +54,7 @@ export function Footer() {
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">
               Navigate
             </p>
-            <ul className="mt-4 grid grid-cols-2 gap-2 text-sm">
+            <ul className="mt-4 grid grid-cols-2 gap-x-6 gap-y-1 text-sm sm:max-w-xs">
               {items.map((item) => (
                 <li key={item.id}>
                   <a
@@ -68,37 +69,30 @@ export function Footer() {
             </ul>
           </nav>
 
-          <div className="space-y-4">
+          <div className="min-w-0 space-y-4">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">
               Connect
             </p>
             {email ? (
               <a
                 href={`mailto:${email}`}
-                className="flex min-h-11 items-center gap-2 text-sm text-text-secondary hover:text-accent"
+                className="flex min-h-11 items-center gap-2 break-all text-sm text-text-secondary hover:text-accent"
               >
-                <Mail size={16} aria-hidden="true" />
+                <Mail size={16} className="shrink-0" aria-hidden="true" />
                 {email}
               </a>
             ) : null}
-            <a
-              href={personalInfo.resume}
-              download
-              className="flex min-h-11 items-center gap-2 text-sm text-text-secondary hover:text-accent"
-            >
-              <Download size={16} aria-hidden="true" />
-              Download Resume
-            </a>
+            <ResumeDownload variant="links" />
             <SocialLinks links={social} />
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-4 border-t border-border pt-6 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 text-sm text-text-muted sm:mt-12 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {personalInfo.name}.{" "}
             <span className="text-text-muted/80">Built with React.</span>
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <Link to="/" className="hover:text-text">
               Home
             </Link>

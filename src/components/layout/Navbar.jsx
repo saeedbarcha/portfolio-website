@@ -1,9 +1,9 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Download, Menu } from "lucide-react";
-import { Button } from "@/components/common/Button.jsx";
+import { Menu } from "lucide-react";
 import { Container } from "@/components/common/Container.jsx";
 import { Avatar } from "@/components/common/Avatar.jsx";
+import { ResumeDownload } from "@/components/common/ResumeDownload.jsx";
 import { personalInfo } from "@/data/personal.js";
 import { useMediaQuery } from "@/hooks/useMediaQuery.js";
 import { useScrollSpy } from "@/hooks/useScrollSpy.js";
@@ -82,9 +82,11 @@ export function Navbar() {
     <header
       className={cx(
         "sticky top-0 z-30 border-b transition-colors duration-300",
-        scrolled || open
-          ? "border-border bg-bg/90 backdrop-blur-md"
-          : "border-transparent bg-transparent",
+        open
+          ? "border-border bg-bg"
+          : scrolled
+            ? "border-border bg-bg/90 backdrop-blur-md"
+            : "border-transparent bg-transparent",
       )}
     >
       <Container className="flex h-16 items-center justify-between gap-4 sm:h-[4.25rem]">
@@ -124,17 +126,9 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button
-            as="a"
-            href={personalInfo.resume}
-            download
-            variant="secondary"
-            size="sm"
-            className="hidden sm:inline-flex"
-          >
-            <Download size={15} aria-hidden="true" />
-            Download Resume
-          </Button>
+          <div className="hidden sm:block">
+            <ResumeDownload />
+          </div>
           <button
             type="button"
             className="inline-flex size-11 items-center justify-center rounded-full border border-border lg:hidden"
@@ -156,7 +150,6 @@ export function Navbar() {
             items={items}
             activeId={getMobileActiveId(location.pathname, isHome, activeId)}
             onNavigate={goToItem}
-            resumeHref={personalInfo.resume}
           />
         </Suspense>
       ) : null}

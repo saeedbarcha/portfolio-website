@@ -259,6 +259,7 @@ export function getPersonJsonLd() {
     data.address = {
       "@type": "PostalAddress",
       addressLocality: "Gilgit",
+      addressRegion: "Gilgit-Baltistan",
       addressCountry: "PK",
     };
   }

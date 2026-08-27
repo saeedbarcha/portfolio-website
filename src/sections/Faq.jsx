@@ -20,7 +20,7 @@ export function Faq() {
         <div className="mt-12 max-w-3xl divide-y divide-border">
           {faqs.map((item) => (
             <details key={item.id} className="group py-5">
-              <summary className="cursor-pointer list-none font-display text-lg font-semibold marker:content-none">
+              <summary className="cursor-pointer list-none font-display text-base font-semibold marker:content-none sm:text-lg">
                 <span className="flex items-start justify-between gap-4">
                   {item.question}
                   <span className="mt-1 text-accent transition group-open:rotate-45" aria-hidden="true">
@@ -28,7 +28,7 @@ export function Faq() {
                   </span>
                 </span>
               </summary>
-              <p className="mt-3 max-w-2xl text-text-secondary">{item.answer}</p>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary sm:text-base">{item.answer}</p>
             </details>
           ))}
         </div>

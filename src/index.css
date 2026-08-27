@@ -55,11 +55,13 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 5.5rem;
+    overflow-x: hidden;
   }
 
   body {
     margin: 0;
     min-width: 320px;
+    overflow-x: hidden;
     background: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-sans);

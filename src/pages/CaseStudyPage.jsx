@@ -120,7 +120,7 @@ export function CaseStudyPage() {
             {isConfiguredText(project.industry) ? <Badge>{project.industry}</Badge> : null}
             {project.confidential ? <Badge>Confidential</Badge> : null}
           </div>
-          <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="mt-5 font-display text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-pretty sm:text-5xl">
             {title}
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-text-secondary">

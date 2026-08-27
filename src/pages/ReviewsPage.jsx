@@ -39,10 +39,10 @@ export function ReviewsPage() {
         />
         <header className="mt-8 max-w-3xl">
           <p className="eyebrow">Public marketplace reviews</p>
-          <h1 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+          <h1 className="mt-4 font-display text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-pretty sm:text-5xl">
             What clients wrote, in their own words
           </h1>
-          <p className="mt-4 text-lg text-text-secondary">
+          <p className="mt-4 text-base leading-relaxed text-text-secondary sm:text-lg">
             {all.length} published quotes from Upwork and Fiverr. Ratings and names stay as they
             appear on those profiles. Open a platform link on any card to verify.
           </p>

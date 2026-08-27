@@ -54,7 +54,7 @@ export function ProjectCard({ project, featured = false, priority = false }) {
       )}
       <div
         className={cx(
-          "relative z-[1] flex min-w-0 flex-1 flex-col p-6 sm:p-8",
+          "relative z-[1] flex min-w-0 flex-1 flex-col p-5 sm:p-8",
           featured && "lg:p-10",
         )}
       >
@@ -63,7 +63,7 @@ export function ProjectCard({ project, featured = false, priority = false }) {
           {isConfiguredText(project.category) ? <Badge>{project.category}</Badge> : null}
           {project.confidential ? <Badge>Confidential</Badge> : null}
         </div>
-        <h3 className={cx("mt-4 font-display font-semibold tracking-tight text-pretty", featured ? "text-2xl sm:text-3xl" : "text-xl")}>
+        <h3 className={cx("mt-4 font-display font-semibold tracking-tight text-pretty", featured ? "text-xl sm:text-3xl" : "text-lg sm:text-xl")}>
           <Link to={`/work/${project.slug}`} className="hover:text-accent">
             {title}
           </Link>
@@ -90,7 +90,7 @@ export function ProjectCard({ project, featured = false, priority = false }) {
           <p className="mt-4 text-text-muted">Project details can be shared in conversation.</p>
         )}
         <TechnologyList items={technologies} className="mt-5" />
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex flex-wrap gap-2.5">
           <Button as={Link} to={`/work/${project.slug}`} size="sm">
             View Case Study
           </Button>

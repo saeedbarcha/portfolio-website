@@ -1,7 +1,8 @@
-import { ArrowRight, Download, Mail } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/common/Button.jsx";
 import { Container } from "@/components/common/Container.jsx";
+import { ResumeDownload } from "@/components/common/ResumeDownload.jsx";
 import { SocialLinks } from "@/components/common/SocialLinks.jsx";
 import { engagement } from "@/data/engagement.js";
 import { heroContent, personalInfo } from "@/data/personal.js";
@@ -43,11 +44,11 @@ export function Hero() {
                 {isConfiguredText(engagement.timezone) ? ` · ${engagement.timezone}` : ""}
               </p>
             ) : null}
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 font-display text-[1.85rem] font-semibold leading-[1.15] tracking-tight text-pretty sm:text-5xl lg:text-6xl">
               {personalInfo.headline}
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-text-secondary">{personalInfo.intro}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg">{personalInfo.intro}</p>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <Button as={Link} to={heroContent.primaryCta.href} size="lg">
                 {heroContent.primaryCta.label}
                 <ArrowRight size={16} aria-hidden="true" />
@@ -55,10 +56,7 @@ export function Hero() {
               <Button as="a" href={heroContent.secondaryCta.href} variant="secondary" size="lg">
                 {heroContent.secondaryCta.label}
               </Button>
-              <Button as="a" href={personalInfo.resume} download variant="ghost" size="lg">
-                <Download size={16} aria-hidden="true" />
-                Download Resume
-              </Button>
+              <ResumeDownload size="lg" />
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               {email ? (
